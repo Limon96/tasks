@@ -19,7 +19,9 @@ $(document).on('click','#addTaskModal .btn-task-save', function (e) {
             }
 
             if (json['success']) {
-                $('.container').prepend("<div class='alert alert-success'>" + json['success'] + "</div>");
+                $('.container').prepend("<div class='alert alert-success'>" + json['success'] + "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                    "    <span aria-hidden=\"true\">&times;</span>\n" +
+                    "  </button></div>");
                 $('.task-content').load(location.href + ' .task-content > div');
                 $('#addTaskModal').modal('hide');
                 $('#addTaskModal input[name=name]').val('');
@@ -45,17 +47,25 @@ $(document).on('click','#editTaskModal .btn-task-save', function (e) {
             }
             if (json['error_auth']) {
                 $('.task-content').load(location.href + ' .task-content > div');
-                $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_auth'] + "</div>");
+                $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_auth'] + "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                    "    <span aria-hidden=\"true\">&times;</span>\n" +
+                    "  </button></div>");
             }
             if (json['error_unknown']) {
-                $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_unknown'] + "</div>");
+                $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_unknown'] + "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                    "    <span aria-hidden=\"true\">&times;</span>\n" +
+                    "  </button></div>");
             }
             if (json['error_not_found']) {
-                $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_not_found'] + "</div>");
+                $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_not_found'] + "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                    "    <span aria-hidden=\"true\">&times;</span>\n" +
+                    "  </button></div>");
             }
 
             if (json['success']) {
-                $('.container').prepend("<div class='alert alert-success'>" + json['success'] + "</div>");
+                $('.container').prepend("<div class='alert alert-success'>" + json['success'] + "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                    "    <span aria-hidden=\"true\">&times;</span>\n" +
+                    "  </button></div>");
                 $('.task-content').load(location.href + ' .task-content > div');
                 $('#editTaskModal').modal('hide');
                 $('#editTaskModal input[name=task_id]').val('');
@@ -102,7 +112,9 @@ $(document).on('click','#auth-form .btn-auth', function (e) {
                 $('#auth-form input[name=password]').after("<div class='error'>" + json['error_password'] + "</div>");
             }
             if (json['error_auth']) {
-                $('#auth-form .card-body').prepend("<div class='alert alert-danger'>" + json['error_auth'] + "</div>");
+                $('#auth-form .card-body').prepend("<div class='alert alert-danger'>" + json['error_auth'] + "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                    "    <span aria-hidden=\"true\">&times;</span>\n" +
+                    "  </button></div>");
             }
 
             if (json['success']) {

@@ -87,7 +87,7 @@ class HomeController extends Controller {
         $data['sorts'] = array();
 
         $data['sorts'][] = array(
-            "name" => 'Name',
+            "name" => 'Имя',
             "order" => 'name',
             "href" => '/?order=name&sort=' . ($sort == 'DESC' ? 'ASC': 'DESC')
         );
@@ -99,7 +99,7 @@ class HomeController extends Controller {
         );
 
         $data['sorts'][] = array(
-            "name" => 'Status',
+            "name" => 'Статус',
             "order" => 'status',
             "href" => '/?order=status&sort=' . ($sort == 'DESC' ? 'ASC': 'DESC')
         );
