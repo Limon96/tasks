@@ -21,7 +21,7 @@
         <?php if ($is_logged) { ?>
         <button class="btn btn-primary btn-logout">Logout</button>
         <?php } else { ?>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#authModal">Auth</button>
+        <a class="btn btn-primary" href="../?v=login">Auth</a>
         <?php } ?>
     </div>
     <div class="clearfix"></div>

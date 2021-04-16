@@ -2,7 +2,12 @@
 
 class LoginController extends Controller {
 
-    public function index()
+    public function index() {
+
+        return $this->view->load('login');
+    }
+
+    public function login()
     {
         $json = array();
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

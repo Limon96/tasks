@@ -73,28 +73,28 @@ $(document).on('click','.btn-edit', function (e) {
 
 });
 
-$(document).on('click','#authModal .btn-auth', function (e) {
+$(document).on('click','#auth-form .btn-auth', function (e) {
     e.preventDefault();
     $('.error, .alert').remove();
 
     $.ajax({
-        url : '../index.php?v=login',
+        url : '../index.php?v=login&act=login',
         method : 'POST',
-        data : $('#authModal input'),
+        data : $('#auth-form input'),
         dataType : 'json',
         success : function (json) {
             if (json['error_login']) {
-                $('#authModal input[name=login]').after("<div class='error'>" + json['error_login'] + "</div>");
+                $('#auth-form input[name=login]').after("<div class='error'>" + json['error_login'] + "</div>");
             }
             if (json['error_password']) {
-                $('#authModal input[name=password]').after("<div class='error'>" + json['error_password'] + "</div>");
+                $('#auth-form input[name=password]').after("<div class='error'>" + json['error_password'] + "</div>");
             }
             if (json['error_auth']) {
-                $('#authModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_auth'] + "</div>");
+                $('#auth-form .card-body').prepend("<div class='alert alert-danger'>" + json['error_auth'] + "</div>");
             }
 
             if (json['success']) {
-                location.reload();
+                location.href = '/';
             }
         }
     });

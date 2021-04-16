@@ -25,7 +25,9 @@ if (isset($_GET['v']) && $_GET['v'] == 'task') {
     $controller = new HomeController();
 }
 
-if (isset($_GET['act']) && $_GET['act'] == 'add') {
+if (isset($_GET['act']) && $_GET['act'] == 'login') {
+    $output = $controller->login();
+} elseif (isset($_GET['act']) && $_GET['act'] == 'add') {
     $output = $controller->add();
 } elseif (isset($_GET['act']) && $_GET['act'] == 'edit') {
     $output = $controller->edit();
