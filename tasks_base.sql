@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 16 2021 г., 17:40
+-- Время создания: Апр 16 2021 г., 18:09
 -- Версия сервера: 10.3.22-MariaDB-log
 -- Версия PHP: 7.3.16
 
@@ -32,22 +32,19 @@ CREATE TABLE `as12_task` (
   `name` varchar(255) CHARACTER SET utf8 NOT NULL,
   `email` varchar(255) CHARACTER SET utf8 NOT NULL,
   `text` text NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 0
+  `status` int(1) NOT NULL DEFAULT 0,
+  `admin_edit` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `as12_task`
 --
 
-INSERT INTO `as12_task` (`task_id`, `name`, `email`, `text`, `status`) VALUES
-(1, 'Task1', 'task1@test.com', 'Task1Text', 1),
-(2, 'Task2', 'task2@test.com', 'Task2Text', 1),
-(3, 'Task3', 'task3@test.com', 'Task3Text', 0),
-(4, 'Task4', 'task4@test.com', 'Task4ext', 0),
-(5, 'test', 'test@email.com', 'asdasasddsadsa dsad sad as', 0),
-(6, 'test123123123', 'test@email.com1', 'asda ss dasd ads ad as', 0),
-(7, 'test123', 'test@email.com', 'asasd d sad asd sad sa', 0),
-(8, 'test22', 'test22@email.com', 'Test22', 0);
+INSERT INTO `as12_task` (`task_id`, `name`, `email`, `text`, `status`, `admin_edit`) VALUES
+(1, 'Task1', 'task1@test.com', 'Task1Text', 0, 0),
+(2, 'Task2', 'task2@test.com', 'Task2Text', 1, 0),
+(3, 'Task3', 'task3@test.com', 'Task3Text', 1, 1),
+(4, 'Task4', 'task4@test.com', 'Task4Text', 0, 0);
 
 -- --------------------------------------------------------
 

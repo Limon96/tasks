@@ -45,10 +45,14 @@
                 <h4><?php echo $task['name']; ?></h4>
                 <h5><?php echo $task['email']; ?></h5>
                 <p class="card-text"><?php echo $task['text']; ?></p>
+                <?php if ($task['status']) { ?><h5>Выполнено</h5><?php } ?>
+                <?php if ($task['admin_edit']) { ?><h5>отредактировано администратором</h5><?php } ?>
             </div>
+            <?php if ($is_logged) { ?>
             <div class="card-footer">
                 <button class="btn btn-primary btn-edit" data-task_id="<?php echo $task['task_id']; ?>">Edit</button>
             </div>
+            <?php } ?>
         </div>
         <?php } ?>
         <?php } ?>

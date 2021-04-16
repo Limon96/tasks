@@ -47,6 +47,8 @@ class HomeController extends Controller {
                     "name" => $task['name'],
                     "email" => $task['email'],
                     "text" => $task['text'],
+                    "status" => $task['status'],
+                    "admin_edit" => $task['admin_edit'],
                 ];
             }
         }

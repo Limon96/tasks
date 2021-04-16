@@ -89,7 +89,8 @@ class TaskModel extends Model {
     {
         $this->db->query("UPDATE " . DB_PREFIX . "task SET 
             text = '" . $this->db->escape($data['text']) . "',
-            status = '" . (int)$data['status'] . "'
+            status = '" . (int)$data['status'] . "',
+            admin_edit = '" . (int)$data['admin_edit'] . "'
             WHERE task_id = '" . (int)$task_id . "'
         ");
     }

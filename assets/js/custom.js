@@ -42,6 +42,10 @@ $(document).on('click','#editTaskModal .btn-task-save', function (e) {
             if (json['error_text']) {
                 $('#editTaskModal textarea[name=text]').after("<div class='error'>" + json['error_text'] + "</div>");
             }
+            if (json['error_auth']) {
+                $('.task-content').load(location.href + ' .task-content > div');
+                $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_auth'] + "</div>");
+            }
 
             if (json['success']) {
                 $('.task-content').load(location.href + ' .task-content > div');

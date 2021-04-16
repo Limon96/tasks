@@ -76,6 +76,10 @@ class TaskController extends Controller {
             $json['error_unknown'] = 'Unknown error';
         }
 
+        if (!$this->user->isLogged()) {
+            $json['error_auth'] = 'Access denied';
+        }
+
         if (!$json) {
 
             $task_model = new TaskModel();
@@ -83,8 +87,16 @@ class TaskController extends Controller {
             $task_info = $task_model->getTask($this->request->post['task_id']);
 
             if ($task_info) {
+
+                if ($task_info['text'] != $this->request->post['text']) {
+                    $admin_edit = 1;
+                } else {
+                    $admin_edit = 0;
+                }
+
                 $task_model->editTask($this->request->post['task_id'], [
                     "text" => $this->request->post['text'],
+                    "admin_edit" => $admin_edit,
                     "status" => (isset($this->request->post['status']) ? $this->request->post['status']: 0),
                 ]);
                 $json['success'] = 'Success';
