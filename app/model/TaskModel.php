@@ -79,7 +79,9 @@ class TaskModel extends Model {
         $this->db->query("INSERT INTO " . DB_PREFIX . "task SET 
             name = '" . $this->db->escape($data['name']) . "',
             email = '" . $this->db->escape($data['email']) . "',
-            text = '" . $this->db->escape($data['text']) . "'
+            text = '" . $this->db->escape($data['text']) . "',
+            status = '0',
+            admin_edit = '0'
         ");
 
         return $this->db->getLastId();

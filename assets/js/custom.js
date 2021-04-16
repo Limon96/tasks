@@ -19,6 +19,7 @@ $(document).on('click','#addTaskModal .btn-task-save', function (e) {
             }
 
             if (json['success']) {
+                $('.container').prepend("<div class='alert alert-success'>" + json['success'] + "</div>");
                 $('.task-content').load(location.href + ' .task-content > div');
                 $('#addTaskModal').modal('hide');
                 $('#addTaskModal input[name=name]').val('');
@@ -48,6 +49,7 @@ $(document).on('click','#editTaskModal .btn-task-save', function (e) {
             }
 
             if (json['success']) {
+                $('.container').prepend("<div class='alert alert-success'>" + json['success'] + "</div>");
                 $('.task-content').load(location.href + ' .task-content > div');
                 $('#editTaskModal').modal('hide');
                 $('#editTaskModal input[name=task_id]').val('');
