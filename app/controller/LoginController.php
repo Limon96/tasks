@@ -12,11 +12,11 @@ class LoginController extends Controller {
         $json = array();
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (!isset($this->request->post['login']) || !$this->request->post['login']) {
-                $json['error_login'] = 'Entry login';
+                $json['error_login'] = 'Введите логин';
             }
 
             if (!isset($this->request->post['password']) || !$this->request->post['password']) {
-                $json['error_password'] = 'Entry password';
+                $json['error_password'] = 'Введите пароль';
             }
 
             if (!$json) {
@@ -26,9 +26,9 @@ class LoginController extends Controller {
                 ]);
 
                 if ($user_id) {
-                    $json['success'] = 'Success';
+                    $json['success'] = 'Успешно авторизован!';
                 } else {
-                    $json['error_auth'] = 'Incorrect login or password';
+                    $json['error_auth'] = 'Неверные логин или пароль';
                 }
             }
         }

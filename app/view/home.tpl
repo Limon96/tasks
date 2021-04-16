@@ -17,11 +17,11 @@
 <body>
 <header>
     <div class="auth-control">
-        <button class="btn btn-secondary" data-toggle="modal" data-target="#addTaskModal">Add New</button>
+        <button class="btn btn-secondary" data-toggle="modal" data-target="#addTaskModal">Добавить задачу</button>
         <?php if ($is_logged) { ?>
-        <button class="btn btn-primary btn-logout">Logout</button>
+        <button class="btn btn-primary btn-logout">Выйти</button>
         <?php } else { ?>
-        <a class="btn btn-primary" href="../?v=login">Auth</a>
+        <a class="btn btn-primary" href="../?v=login">Войти</a>
         <?php } ?>
     </div>
     <div class="clearfix"></div>
@@ -75,14 +75,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addTaskLabel">New Task</h5>
+                <h5 class="modal-title" id="addTaskLabel">Новая задача</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="input-add-name">Name</label>
+                    <label for="input-add-name">Имя</label>
                     <input id="input-add-name" type="text" name="name" class="form-control">
                 </div>
                 <div class="form-group">
@@ -90,13 +90,13 @@
                     <input id="input-add-email" type="text" name="email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="textarea-add-text">Text</label>
+                    <label for="textarea-add-text">Текст задачи</label>
                     <textarea id="textarea-add-text" name="text" class="form-control"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-task-save">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary btn-task-save">Сохранить</button>
             </div>
         </div>
     </div>
@@ -107,25 +107,25 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editTaskLabel">Edit Task</h5>
+                <h5 class="modal-title" id="editTaskLabel">Редактирование задачи</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="textarea-edit-text">Text</label>
+                    <label for="textarea-edit-text">Текст задачи</label>
                     <textarea id="textarea-edit-text" name="text" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="input-edit-status">Status</label>
+                    <label for="input-edit-status">Статус</label>
                     <input id="input-edit-status" type="checkbox" name="status" value="1" class="form-control">
                 </div>
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="task_id">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-task-save">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary btn-task-save">Сохранить</button>
             </div>
         </div>
     </div>
@@ -136,24 +136,24 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="authLabel">Auth</h5>
+                <h5 class="modal-title" id="authLabel">Авторизация</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="input-login">Login</label>
+                    <label for="input-login">Логин</label>
                     <input id="input-login" type="text" name="login" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="input-password">Password</label>
+                    <label for="input-password">Пароль</label>
                     <input id="input-password" type="password" name="password" class="form-control">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-auth">Login</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary btn-auth">Войти</button>
             </div>
         </div>
     </div>

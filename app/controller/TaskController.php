@@ -33,19 +33,19 @@ class TaskController extends Controller {
         $json = array();
 
         if (!isset($this->request->post['name']) || strlen($this->request->post['name']) < 1) {
-            $json['error_name'] = 'Enter name';
+            $json['error_name'] = 'Введите имя';
         }
 
         if (!isset($this->request->post['email']) || strlen($this->request->post['email']) < 1) {
-            $json['error_email'] = 'Enter email';
+            $json['error_email'] = 'Введите Email';
         } else {
             if (!filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL)) {
-                $json['error_email'] = 'Email incorrect';
+                $json['error_email'] = 'Введен не корректный Email ';
             }
         }
 
         if (!isset($this->request->post['text']) || strlen($this->request->post['text']) < 1) {
-            $json['error_text'] = 'Entry text';
+            $json['error_text'] = 'Введите текст задачи';
         }
 
         if (!$json) {
@@ -57,7 +57,7 @@ class TaskController extends Controller {
                 "text" => $this->request->post['text'],
             ]);
 
-            $json['success'] = 'Success';
+            $json['success'] = 'Успешно добавлено';
             $json['task_id'] = $task_id;
         }
 
@@ -69,15 +69,15 @@ class TaskController extends Controller {
         $json = array();
 
         if (!isset($this->request->post['text']) || strlen($this->request->post['text']) < 1) {
-            $json['error_text'] = 'Entry text';
+            $json['error_text'] = 'Введите текст задачи';
         }
 
         if (!isset($this->request->post['task_id']) || $this->request->post['task_id'] < 1) {
-            $json['error_unknown'] = 'Unknown error';
+            $json['error_unknown'] = 'Неизвестная ошибка! Повторите позже';
         }
 
         if (!$this->user->isLogged()) {
-            $json['error_auth'] = 'Access denied';
+            $json['error_auth'] = 'Доступ запрещен';
         }
 
         if (!$json) {
@@ -99,10 +99,10 @@ class TaskController extends Controller {
                     "admin_edit" => $admin_edit,
                     "status" => (isset($this->request->post['status']) ? $this->request->post['status']: 0),
                 ]);
-                $json['success'] = 'Success';
+                $json['success'] = 'Успешно сохранено';
 
             } else {
-                $json['error_not_found'] = 'Task not found';
+                $json['error_not_found'] = 'Задача не найдена';
             }
         }
 

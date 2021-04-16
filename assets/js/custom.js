@@ -47,6 +47,12 @@ $(document).on('click','#editTaskModal .btn-task-save', function (e) {
                 $('.task-content').load(location.href + ' .task-content > div');
                 $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_auth'] + "</div>");
             }
+            if (json['error_unknown']) {
+                $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_unknown'] + "</div>");
+            }
+            if (json['error_not_found']) {
+                $('#editTaskModal .modal-body').prepend("<div class='alert alert-danger'>" + json['error_not_found'] + "</div>");
+            }
 
             if (json['success']) {
                 $('.container').prepend("<div class='alert alert-success'>" + json['success'] + "</div>");
