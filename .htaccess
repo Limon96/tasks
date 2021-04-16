@@ -1,0 +1,16 @@
+<IfModule dir_module>
+    DirectoryIndex index.php
+</IfModule>
+
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+
+Options -Indexes
+Options -Includes
+Options +FollowSymlinks
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /index.php?%{REQUEST_URI} [QSA,L]
+
+ErrorDocument 403 /
