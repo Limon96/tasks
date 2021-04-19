@@ -39,7 +39,7 @@ $(document).on('click','#editTaskModal .btn-task-save', function (e) {
     $.ajax({
         url : '../index.php?v=task&act=edit',
         method : 'POST',
-        data : $('#editTaskModal input, #editTaskModal textarea'),
+        data : $('#editTaskModal input[type=checkbox]:checked, #editTaskModal input[type=hidden], #editTaskModal textarea'),
         dataType : 'json',
         success : function (json) {
             if (json['error_text']) {
